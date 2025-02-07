@@ -30,7 +30,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 30%;
             flex-shrink: 0; 
         }
 
@@ -64,9 +63,40 @@
             display: none;
         }
 
-        .content-slide:nth-of-type(2) { background-image: url("MainCover.jpeg");background-repeat: no-repeat;background-size: cover;background-position: center;}
+        /* .content-slide:nth-of-type(2) { background-image: url("MainCover.jpeg");background-repeat: no-repeat;background-size: cover;background-position: center;} */
+        .content-slide:nth-of-type(2) {
+  position: relative;
+  background-image: url("MainCover.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.content-slide:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 0;
+}
+
+.content-slide:nth-of-type(2) > *, 
+.content-slide:nth-of-type(2) h2,
+.content-slide:nth-of-type(2) p,
+.content-slide:nth-of-type(2) a,
+.content-slide:nth-of-type(2) div,
+.content-slide:nth-of-type(2) img
+{
+  position: relative;
+  z-index: 1; /* Ensure content is on top */
+}
         .content-slide:nth-of-type(3) { background-color: #0f0 !important; }
         .content-slide:nth-of-type(4) { background-color: #00f !important; }
+
+
 
         .navbar-custom {
             transition: background-color 0.3s ease;
@@ -180,11 +210,20 @@
 .navbar-nav .nav-item .nav-link.active {
     color: white; 
 }
+#mainCompanyLogo{
+    height: 15%;
+    width: 15%;
+}
+#secoundCompanyLogo{
+    height: 10%;
+    width: 10%;
+}
     </style>
 </head>
 <body>
 
     <div class="main-container">
+        <img src="./company logo.png" id="secoundCompanyLogo" style="display: none;">
         <div class="sidebar" id="sidebar-content" style="display: none;">
             <div class="sidebar-content">
                 <div class="sidebar-text" id="sidebar-text">
@@ -194,26 +233,36 @@
                 </div>
             </div>
         </div>
-
+        <!-- about, services, industry, careers, blog, contact -->
         <div class="content-wrapper" id="content-wrapper">
             <div class="navbar-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-custom">
                     <div class="container">
+                        <img src="./company logo.png" id="mainCompanyLogo">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="#">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
+                                <a class="nav-link" href="#">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
+                                <a class="nav-link" href="#">Industry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Careers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
-            <div class="content-slide" data-nav-color="#f00" style="margin-bottom: -2%;">
+            <div class="content-slide" data-nav-color="#f00" id="main-content-slide">
                 <div class="slide-content">
                     <div class="agency-description-container">
                         <div class="agency-description">
@@ -247,7 +296,8 @@
         const sidebarText = document.getElementById('sidebar-text');
         const sidebarcontent = document.getElementById('sidebar-content')
         const slides = document.querySelectorAll('.content-slide');
-
+        const companyLogo = document.getElementById('mainCompanyLogo');
+        const secoundCompanyLogo = document.getElementById('secoundCompanyLogo');
         document.getElementById('content-wrapper').addEventListener('scroll', () => {
             slides.forEach((slide, index) => {
                 const rect = slide.getBoundingClientRect();
@@ -255,9 +305,13 @@
                     if (index === 1) {
                         sidebarcontent.style.display='flex';
                         sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything">Hello World</div></div>`;
+                        companyLogo.style.display='none';
+                        secoundCompanyLogo.style.display='flex';
                     }
                     if(index===0){
                         sidebarcontent.style.display='none';
+                        companyLogo.style.display='flex';
+                        secoundCompanyLogo.style.display='none';
                     }
                 }
             });
