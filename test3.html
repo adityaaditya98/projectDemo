@@ -150,6 +150,29 @@
         .navbar-nav .nav-link {
             color: white !important;
         }
+        .navbar-nav .nav-item {
+    margin-right: 20px; /* Adjust the value as needed */
+}
+
+/* Remove margin-right from the last item (optional) */
+    .navbar-nav .nav-item:last-child {
+    margin-right: 0;
+}
+.navbar-nav .nav-item .nav-link {
+    transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transition for border and color */
+    border-bottom: 2px solid transparent; /* Initially transparent border */
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link.active { /* Apply to hover and active */
+    border-bottom-color: white; /* Change border color on hover/active */
+    color: white; /* Example: Change color on hover */
+}
+
+
+.navbar-nav .nav-item .nav-link.active {
+    color: white; /* Example: Active link color */
+}
     </style>
 </head>
 <body>
