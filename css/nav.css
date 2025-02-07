@@ -1,0 +1,87 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+
+.benefit-icon {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    color: #8bc34a; /* Example green color */
+    vertical-align: middle; /* Align icon with text */
+    margin-right: 5px;  /* Space between icon and text */
+  }
+
+  .benefit-text {
+    display: inline-block; /* Important for inline alignment */
+    vertical-align: middle; /* Align text with icon */
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  .benefit-item {
+    margin-bottom: 10px; /* Reduced spacing between items */
+  }
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .col-md-6 { /* Added to style the columns directly */
+      padding: 10px; /* Add some padding around the columns */
+  }
+
+  
+
+
+
+  .tech-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px 10px; /* Space between icons horizontally */
+  }
+
+  .tech-icon img {
+    max-width: 60%;
+    max-height: 60%;
+  }
+
+  .tech-name {
+    text-align: center;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .leaf-icon {
+    font-family: 'Material Icons';
+    font-size: 20px;
+    vertical-align: middle;
+    color: #8bc34a;
+  }
+
+  .tech-container { /* New class for the flexbox container */
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+  }
