@@ -22,7 +22,6 @@
         }
 
         .sidebar {
-            background-color: white;
             color: black;
             padding: 20px;
             overflow-y: auto;
@@ -51,7 +50,7 @@
             color: white;
             justify-content: center;
             align-items: center;
-             min-width: 0;
+            min-width: 0;
         }
 
         .content-wrapper, .sidebar {
@@ -143,7 +142,7 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            width: 100%;
+            
         }
 
         .agency-description-container {
@@ -218,13 +217,22 @@
 #secoundCompanyLogo{
     margin-top: 8px;
     height: 17%;
-    width: 15%;
+    width: 55%;
+}
+#sidebar-Main{
+    background-image: url("./3690.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    
 }
     </style>
 </head>
 <body>
 
     <div class="main-container">
+    <div id="sidebar-Main">
         <img src="./company logo.png" id="secoundCompanyLogo" style="display: none;">
         <div class="sidebar" id="sidebar-content" style="display: none;">
             <div class="sidebar-content">
@@ -235,6 +243,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <!-- about, services, industry, careers, blog, contact -->
         <div class="content-wrapper" id="content-wrapper">
             <div class="navbar-wrapper">
@@ -268,7 +277,7 @@
                 <div class="slide-content">
                     <div class="agency-description-container">
                         <div class="agency-description">
-                            <h2 style="font-size: 200%; "><center><p style="margin-bottom: 0%;">Welcome to</p><p>Glance Cyber</p></center></h2>
+                            <h2 style="font-size: 150%; "><center><p style="margin-bottom: 0%;">Welcome to</p><p style="display: block;">Glance Cyber Technologies</p></center></h2>
                         </div>
                     </div>
                 </div>
@@ -276,17 +285,16 @@
             <div class="content-slide" data-nav-color="#0f0" style="margin-bottom: -2%;"><div class="slide-content">
                 <div class="agency-description-container-slide">
                     <div class="agency-description">
-                        everything
+                    <p style="font-size: 200%;">
+                        EVERYTHING
+                    </p>
                     </div>
                 </div>
             </div></div>
             <div class="content-slide" data-nav-color="#00f" style="margin-bottom: -2%;"><div class="slide-content">
                 <div class="agency-description-container-slide">
                     <div class="agency-description">
-                        <h1>Tailored Web Development,</h1>
-                        <h1>Digital Marketing & SEO,</h1>
-                        <h1>Tailored Software Development,</h1>
-                        <h1>Application support & Maintanance</h1>
+                        <p>Empowering businesses through technology and design, we excel in application development, strategy, design, and Support offering innovative, scalable, and client-centric solutions to enhance digital presence and achieve business goales,</p>
                     </div>
                 </div>
             </div></div>
@@ -307,13 +315,13 @@
                 if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
                     if (index === 1) {
                         sidebarcontent.style.display='flex';
-                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything">ASK<br><p>We are IT Services<br>& Consulting<br>based in london,England,UK</p></div></div>`;
+                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything"><h1>ASK</h1><br><p>Headquarters based in<br> London,<br> United Kingdom</p></div></div>`;
                         companyLogo.style.display='none';
                         secoundCompanyLogo.style.display='flex';
                     }
                     if (index === 2) {
                         sidebarcontent.style.display='flex';
-                        sidebarText.innerHTML = `<div class="question-everything-container" style=" margin-left: 172px;"><div class="question-everything"><h1>What We DO</h1></div></div>`;
+                        sidebarText.innerHTML = `<div class="question-everything-container" style=" margin-left: 100px;"><div class="question-everything"><h1>What We DO</h1></div></div>`;
                         companyLogo.style.display='none';
                         secoundCompanyLogo.style.display='flex';
                     }
