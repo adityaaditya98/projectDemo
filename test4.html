@@ -59,17 +59,18 @@
             scrollbar-width: none;
         }
 
-        .content-wrapper::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+        /* .content-wrapper::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
             display: none;
-        }
+        } */
 
         /* .content-slide:nth-of-type(2) { background-image: url("MainCover.jpeg");background-repeat: no-repeat;background-size: cover;background-position: center;} */
         .content-slide:nth-of-type(2) {
   position: relative;
-  background-image: url("MainCover.jpeg");
+  background-image: url("./pexels-fauxels-3184291.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
 }
 
 .content-slide:nth-of-type(2)::before {
@@ -79,7 +80,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.2); 
   z-index: 0;
 }
 
@@ -93,8 +94,8 @@
   position: relative;
   z-index: 1; /* Ensure content is on top */
 }
-        .content-slide:nth-of-type(3) { background-color: #0f0 !important; }
-        .content-slide:nth-of-type(4) { background-color: #00f !important; }
+        .content-slide:nth-of-type(3) { background-color: #4a6e6e !important; }
+        .content-slide:nth-of-type(4) { background-color: #3b8375 !important; }
 
 
 
@@ -196,8 +197,8 @@
     margin-right: 0;
 }
 .navbar-nav .nav-item .nav-link {
-    transition: border-color 0.3s ease, color 0.3s ease; 
-    border-bottom: 2px solid transparent; 
+    transition: border-color 0.4s ease, color 0.8s ease;
+    border-bottom: 2px solid  transparent; 
 }
 
 .navbar-nav .nav-item .nav-link:hover,
@@ -215,8 +216,9 @@
     width: 15%;
 }
 #secoundCompanyLogo{
-    height: 10%;
-    width: 10%;
+    margin-top: 8px;
+    height: 17%;
+    width: 15%;
 }
     </style>
 </head>
@@ -237,8 +239,8 @@
         <div class="content-wrapper" id="content-wrapper">
             <div class="navbar-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-custom">
+                    <img src="./company logo.png" id="mainCompanyLogo">
                     <div class="container">
-                        <img src="./company logo.png" id="mainCompanyLogo">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">About</a>
@@ -266,8 +268,7 @@
                 <div class="slide-content">
                     <div class="agency-description-container">
                         <div class="agency-description">
-                            We're a web design and digital marketing agency based in Washington, DC. <br>
-                            Our strategic approach helps our clients answer their toughest questions.
+                            <h2 style="font-size: 200%; "><center><p style="margin-bottom: 0%;">Welcome to</p><p>Glance Cyber</p></center></h2>
                         </div>
                     </div>
                 </div>
@@ -275,16 +276,17 @@
             <div class="content-slide" data-nav-color="#0f0" style="margin-bottom: -2%;"><div class="slide-content">
                 <div class="agency-description-container-slide">
                     <div class="agency-description">
-                        We're a web design and digital marketing agency based in Washington, DC. <br>
-                        Our strategic approach helps our clients answer their toughest questions.
+                        everything
                     </div>
                 </div>
             </div></div>
             <div class="content-slide" data-nav-color="#00f" style="margin-bottom: -2%;"><div class="slide-content">
                 <div class="agency-description-container-slide">
                     <div class="agency-description">
-                        We're a web design and digital marketing agency based in Washington, DC. <br>
-                        Our strategic approach helps our clients answer their toughest questions.
+                        <h1>Tailored Web Development,</h1>
+                        <h1>Digital Marketing & SEO,</h1>
+                        <h1>Tailored Software Development,</h1>
+                        <h1>Application support & Maintanance</h1>
                     </div>
                 </div>
             </div></div>
@@ -301,10 +303,17 @@
         document.getElementById('content-wrapper').addEventListener('scroll', () => {
             slides.forEach((slide, index) => {
                 const rect = slide.getBoundingClientRect();
+                console.log(rect);
                 if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
                     if (index === 1) {
                         sidebarcontent.style.display='flex';
-                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything">Hello World</div></div>`;
+                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything">ASK<br><p>We are IT Services<br>& Consulting<br>based in london,England,UK</p></div></div>`;
+                        companyLogo.style.display='none';
+                        secoundCompanyLogo.style.display='flex';
+                    }
+                    if (index === 2) {
+                        sidebarcontent.style.display='flex';
+                        sidebarText.innerHTML = `<div class="question-everything-container" style=" margin-left: 172px;"><div class="question-everything"><h1>What We DO</h1></div></div>`;
                         companyLogo.style.display='none';
                         secoundCompanyLogo.style.display='flex';
                     }
