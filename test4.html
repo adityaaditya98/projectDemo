@@ -132,7 +132,6 @@
 
         .question-everything {
             font-size: 1.5em;
-            text-align: right; 
             width: 100%; 
         }
 
@@ -315,13 +314,13 @@
                 if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
                     if (index === 1) {
                         sidebarcontent.style.display='flex';
-                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything"><h1>ASK</h1><p>Headquarters based in<br> London, United Kingdom</p></div></div>`;
+                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything" style="margin-top: 85px;margin-left: 300px"><center><h1 style="font-size: 250%;">ASK</h1></center><p>Headquarters based in<br> London, United Kingdom</p></div></div>`;
                         companyLogo.style.display='none';
                         secoundCompanyLogo.style.display='flex';
                     }
                     if (index === 2) {
                         sidebarcontent.style.display='flex';
-                        sidebarText.innerHTML = `<div class="question-everything-container" style=" margin-left: 100px;"><div class="question-everything"><h1>What We DO</h1></div></div>`;
+                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything" style="margin-top: 20px;margin-left: 236px"><center><h1 style="font-size: 250%;">What We Do</h1></center></div></div>`;
                         companyLogo.style.display='none';
                         secoundCompanyLogo.style.display='flex';
                     }
