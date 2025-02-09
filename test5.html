@@ -110,7 +110,6 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            width: 100%;
         }
 
         .sidebar-text {
@@ -124,6 +123,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            flex-direction: column;
             width: 100%;
         }
 
@@ -213,7 +213,7 @@
 #secoundCompanyLogo{
     margin-top: 8px;
     height: 17%;
-    width: 48%;
+    width: 50%;
 }
 
 .bottom-bar {
@@ -257,6 +257,10 @@
 
   .bottom-bar p {
     margin: 0;
+  }
+  #sidebar-Main{
+    display: flex;
+    width: 30%;
   }
     </style>
 </head>
@@ -350,6 +354,7 @@
     <script>
         const sidebarText = document.getElementById('sidebar-text');
         const sidebarcontent = document.getElementById('sidebar-content');
+        const sidebarMain = document.getElementById('sidebar-Main');
         const bottom = document.getElementById('bottomId');
         const slides = document.querySelectorAll('.content-slide');
         const companyLogo = document.getElementById('mainCompanyLogo');
@@ -360,20 +365,23 @@
                 console.log(rect);
                 if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
                     if (index === 1) {
+                        sidebarMain.style.width="30%";
                         sidebarcontent.style.display='flex';
-                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything" style="margin-top: 42.8%;margin-left: 300px"><center><h1 style="font-size: 250%;">ASK</h1></center><br><p>Headquarters based in<br> London, United Kingdom</p></div></div>`;
+                        sidebarText.innerHTML = `<div class="question-everything-container" style="margin-top: 55%"><div class="question-everything"><center><h1 style="font-size: 250%;">ASK</h1></center><br></div><p>Headquarters based in<br> London, United Kingdom</p></div>`;
                         companyLogo.style.display='none';
                         bottom.style.display="none";
                         secoundCompanyLogo.style.display='flex';
                     }
                     if (index === 2) {
+                        sidebarMain.style.width="30%";
                         sidebarcontent.style.display='flex';
-                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything" style="margin-top:  42.8%;margin-left: 236px"><center><h1 style="font-size: 250%;">What We Do</h1></center></div></div>`;
+                        sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything"><center><h1>What We Do</h1></center></div></div>`;
                         companyLogo.style.display='none';
                         bottom.style.display="flex";
                         secoundCompanyLogo.style.display='flex';
                     }
                     if(index===0){
+                        sidebarMain.style.width="0";
                         sidebarcontent.style.display='none';
                         companyLogo.style.display='flex';
                         bottom.style.display="none";
