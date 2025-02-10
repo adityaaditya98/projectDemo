@@ -259,8 +259,9 @@
     margin: 0;
   }
   #sidebar-Main{
-    display: flex;
+    display: none;
     width: 30%;
+    
   }
   /* .dropdown-item-custom-hover:hover {
   background-color: #007bff;
@@ -269,6 +270,22 @@
     </style>
 </head>
 <body>
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Welcome</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Please be aware that, due to ongoing maintenance, certain pages of the website may be temporarily unavailable. If you have any questions or concerns, please feel free to contact us at info@glancect.com, and we will be happy to assist you.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="main-container">
     <div id="sidebar-Main">
@@ -337,7 +354,7 @@
                                     Careers
                                 </a>
                                 <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">Java Full Stack Developer (.Net & Java)</a></li>
+                                  <li><a class="dropdown-item" href="#">Java Full Stack Developer</a></li>
                                   <li><a class="dropdown-item" href="#">Frontend Developer</a></li>
                                   <li><a class="dropdown-item" href="#">Backend Developer</a></li>
                                   <li><a class="dropdown-item" href="#">Sales and Marketing Associate</a></li>
@@ -348,7 +365,7 @@
                                   <li><a class="dropdown-item" href="#">SDM</a></li>
                                   <li><a class="dropdown-item" href="#">Digital Marketing Executive</a></li>
                                   <li><a class="dropdown-item" href="#">Software Test Engineer</a></li>
-                                  <li><a class="dropdown-item" href="#">Customer Support Executive (Inbound BPO)</a></li>
+                                  <li><a class="dropdown-item" href="#">Customer Support Executive</a></li>
                                   <li><a class="dropdown-item" href="#">IT & Non IT Recruiter</a></li>
                                   <li><a class="dropdown-item" href="#">TL & Managers</a></li>
                                 </ul>
@@ -422,6 +439,7 @@
                     if (index === 1) {
                         sidebarMain.style.width="30%";
                         sidebarcontent.style.display='flex';
+                        sidebarMain.style.display='flex';
                         sidebarText.innerHTML = `<div class="question-everything-container" style="margin-top: 55%"><div class="question-everything"><center><h1 style="font-size: 250%;">ASK</h1></center><br></div><p>Headquarters based in<br> London, United Kingdom</p></div>`;
                         companyLogo.style.display='none';
                         bottom.style.display="none";
@@ -430,13 +448,15 @@
                     if (index === 2) {
                         sidebarMain.style.width="30%";
                         sidebarcontent.style.display='flex';
+                        sidebarMain.style.display='flex';
                         sidebarText.innerHTML = `<div class="question-everything-container"><div class="question-everything"><center><h1>What We Do</h1></center></div></div>`;
                         companyLogo.style.display='none';
                         bottom.style.display="flex";
                         secoundCompanyLogo.style.display='flex';
                     }
-                    if(index===0){
+                    if(index<=0){
                         sidebarMain.style.width="0";
+                        sidebarMain.style.display='none';
                         sidebarcontent.style.display='none';
                         companyLogo.style.display='flex';
                         bottom.style.display="none";
@@ -445,6 +465,12 @@
                 }
             });
         });
+
+
+        window.onload = function() {
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
+        };
     </script>
 </body>
 </html>
